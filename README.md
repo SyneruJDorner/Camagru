@@ -54,3 +54,6 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Database management systems
     - MySQL
     - phpMyAdmin
+
+## Project Expectations
+https://github.com/justindd1994/Camagru/blob/master/camagru.markingsheet.pdf
