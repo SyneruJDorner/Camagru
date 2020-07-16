@@ -15,7 +15,7 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Download XAMPP from the provided website
 - Install XAMPP on you PC
 - Place the downloaded Camagru folder into the installed path "C:\xampp\htdocs\"
-- Ensure less secure apps on gmail (as I used gmail for sending email)
+- Ensure less secure apps enabled on gmail (as I used gmail for sending email)
 
 - Next navigate to "C:\xampp\php\php.ini"
 - Look for the heading "[mail function]"
