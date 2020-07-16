@@ -43,3 +43,17 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Open a web browser of your choosing
 - Type the following in your search bar "http://localhost/camugru/"
 - Hit submit, and the website Camagru should appear.
+
+## Code Breakdown
+- Back end technologies
+    - PHP
+    - SQL
+    - JavaScript
+
+- Front-end technologies
+    - HTML
+    - CSS
+
+- Database management systems
+    - MySQL
+    - phpMyAdmin
