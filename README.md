@@ -7,7 +7,7 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 
 ## Installation
 ### How to set up VSCode
-- Navigate to: https://github.com/sgigaba/matcha.git
+- Navigate to: https://github.com/justindd1994/Camagru
 - Click "Code/Download Zip" or simply clone it with Git.
 - Once you have downloaded the source code navigate to the fold
 
