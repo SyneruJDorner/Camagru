@@ -6,7 +6,7 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - XAMPP: https://www.apachefriends.org/index.html
 
 ## Installation
-### How to set up VSCode
+### How to download the project
 - Navigate to: https://github.com/justindd1994/Camagru
 - Click "Code/Download Zip" or simply clone it with Git.
 - Once you have downloaded the source code navigate to the fold
