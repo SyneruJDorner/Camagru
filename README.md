@@ -3,10 +3,7 @@
 A web site that is similar to Pintrest or Instagram, it allows users to upload images, add filters, like, dislike and comment on images.
 
 ## Requirements
-- PHP
 - XAMPP: https://www.apachefriends.org/index.html
-- JavaScript, CSS
-- SQL Database
 
 ## Installation
 ### How to set up VSCode
