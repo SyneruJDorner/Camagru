@@ -24,7 +24,7 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Look for the heading "[mail function]"
 - Set SMTP=smtp.gmail.com
 - smtp_port=587
-- sendmail_from = <ENTER YOUR EMAIL HERE>
+- sendmail_from = ENTER YOUR EMAIL HERE
 - sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
 - Save and close php.ini
 
@@ -32,8 +32,8 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Look for the heading "[sendmail]"
 - Set smtp_server=smtp.gmail.com
 - Set smtp_port=587
-- Set auth_username = <ENTER YOUR EMAIL HERE>
-- Set auth_password = <ENTER YOUR GMAIL PASSWORD>
+- Set auth_username = ENTER YOUR EMAIL HERE
+- Set auth_password = ENTER YOUR GMAIL PASSWORD
 - Save and close sendmail.ini
 
 ### How to run the program
