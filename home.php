@@ -27,18 +27,22 @@
 		$stmt = $connection->prepare($sql);
 		$stmt->execute();
 		
-		$name = $_SESSION['username'];
-		$stmt = $connection->prepare("SELECT * FROM registered_users WHERE username=:username");
-		$stmt->execute(array(':username' => $name));
-
-		while($row = $stmt->fetch())
+		if (isset($_SESSION['username']))
 		{
-			$_SESSION["ID"]             = $row['ID'];
-			$_SESSION["username"]       = $row['username'];
-			$_SESSION["email"]          = $row['email'];
-			$_SESSION["code"]           = $row['confirmation_code'];
-			$_SESSION["registered"]     = $row['registered_account'];
-			$_SESSION["comment_email"]     = $row['comment_email'];
+			$name = $_SESSION['username'];
+
+			$stmt = $connection->prepare("SELECT * FROM registered_users WHERE username=:username");
+			$stmt->execute(array(':username' => $name));
+
+			while($row = $stmt->fetch())
+			{
+				$_SESSION["ID"]             = $row['ID'];
+				$_SESSION["username"]       = $row['username'];
+				$_SESSION["email"]          = $row['email'];
+				$_SESSION["code"]           = $row['confirmation_code'];
+				$_SESSION["registered"]     = $row['registered_account'];
+				$_SESSION["comment_email"]     = $row['comment_email'];
+			}
 		}
 	}
 
@@ -340,18 +344,25 @@ span.psw {
 			$stmt = $connection->prepare($sql);
 			$stmt->execute();
 			
-			$name = $_SESSION['username'];
-			$stmt = $connection->prepare("SELECT * FROM registered_users WHERE username=:username");
-			$stmt->execute(array(':username' => $name));
-			$profile_image = null;
-			
-			while($row = $stmt->fetch())
-				$profile_image = $row['profile_pic'];
-			
-			if($profile_image != null)
-				echo 'data:image;base64,'.$profile_image;
+			if (isset($_SESSION['username']))
+			{
+				$name = $_SESSION['username'];
+				$stmt = $connection->prepare("SELECT * FROM registered_users WHERE username=:username");
+				$stmt->execute(array(':username' => $name));
+				$profile_image = null;
+				
+				while($row = $stmt->fetch())
+					$profile_image = $row['profile_pic'];
+				
+				if($profile_image != null)
+					echo 'data:image;base64,'.$profile_image;
+				else
+					echo "https://www.edgehill.ac.uk/health/files/2017/12/blank-profile.png";
+			}
 			else
-				echo "https://www.edgehill.ac.uk/health/files/2017/12/blank-profile.png";
+			{
+				echo "Art/Transparent.png";
+			}
 		?>
 		"/>
 		<div style="padding-left: 110px;padding-top: 10px;"><h1 style="color: white;">Welcome
@@ -602,21 +613,24 @@ span.psw {
 				
 				echo '<div style="width: 100%; display: table;">';
 					echo '<div class="image_options_row">';
-						if ($row[2] == $_SESSION['username'])
+						if (isset($_SESSION['username']))
 						{
-							echo '<a href="image_options.php?title='.$row[1].'&username='.$row[2].'&json_comment='.$row[3].'&like=1">' . "\n";
-								$likeColour = (determine_likes($_SESSION['username'], $row[3]) == 1) ? 'rgba(0,255,0, 1)' : 'rgba(180,180,180, 1)';
-								echo '<div style="background-color: ' . $likeColour . '; width: 25px; height: 25px; mask: url(#mymask);
-								-webkit-mask-box-image: url(Art/Like.png);"></div>';
-							echo '</a>' . "\n";
-							echo '<a href="image_options.php?title='.$row[1].'&username='.$row[2].'&json_comment='.$row[3].'&like=-1">' . "\n";
-								$unlikeColour = (determine_likes($_SESSION['username'], $row[3]) == -1) ? 'rgba(255,0,0, 1)' : 'rgba(180,180,180, 1)';
-								echo '<div style="background-color: ' . $unlikeColour . '; width: 25px; height: 25px; mask: url(#mymask);
-								-webkit-mask-box-image: url(Art/Dislike.png);" class="img-vert"></div>';
-							echo '</a>' . "\n";
-							echo '<a href="delete_image.php?delete='.$databse_position.'&page='.$page.'">' . "\n";
-								echo '<img height="25" width="auto" src="Art/Delete.png" class="img-right" name="delete" href="home.php?page=1""> ' . "\n";
-							echo '</a>' . "\n";
+							if ($row[2] == $_SESSION['username'])
+							{
+								echo '<a href="image_options.php?title='.$row[1].'&username='.$row[2].'&json_comment='.$row[3].'&like=1">' . "\n";
+									$likeColour = (determine_likes($_SESSION['username'], $row[3]) == 1) ? 'rgba(0,255,0, 1)' : 'rgba(180,180,180, 1)';
+									echo '<div style="background-color: ' . $likeColour . '; width: 25px; height: 25px; mask: url(#mymask);
+									-webkit-mask-box-image: url(Art/Like.png);"></div>';
+								echo '</a>' . "\n";
+								echo '<a href="image_options.php?title='.$row[1].'&username='.$row[2].'&json_comment='.$row[3].'&like=-1">' . "\n";
+									$unlikeColour = (determine_likes($_SESSION['username'], $row[3]) == -1) ? 'rgba(255,0,0, 1)' : 'rgba(180,180,180, 1)';
+									echo '<div style="background-color: ' . $unlikeColour . '; width: 25px; height: 25px; mask: url(#mymask);
+									-webkit-mask-box-image: url(Art/Dislike.png);" class="img-vert"></div>';
+								echo '</a>' . "\n";
+								echo '<a href="delete_image.php?delete='.$databse_position.'&page='.$page.'">' . "\n";
+									echo '<img height="25" width="auto" src="Art/Delete.png" class="img-right" name="delete" href="home.php?page=1""> ' . "\n";
+								echo '</a>' . "\n";
+							}
 						}
 					echo '</div>';
 				echo '</div>';
