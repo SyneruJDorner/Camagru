@@ -57,3 +57,25 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 
 ## Project Expectations
 https://github.com/justindd1994/Camagru/blob/master/camagru.markingsheet.pdf
+
+## Steps
+1.	Navigate to localhost/Camagru/
+2.	Successfully register an account. make sure to use a valid email address as password
+3.	Check your inbox for a verification email and verify your account.
+4.	Log in to your account.
+5.	Update account information.
+6.	Post an image with and without an overlay.
+7.	Comment, like and dislike images successfully.
+8.	Delete a posted image.
+9.	Log out and test that strangers are welcome to view the images, but are unable to interact with it.
+
+## Outcomes
+1.	The webpage should load.
+2.	The account should appear in the database.
+3.	You should receive an email with a link to validate your account.
+4.	Your username should appear in the top-left corner.
+5.	You should be able to edit everything.
+6.	A post should show the image and overlay on the home page along with pagination at 5 images.
+7.	Your comment should appear.
+8.	The post should be deleted.
+9.	Strangers should be able to view all images, but will be unable to like, dislike or comment.
