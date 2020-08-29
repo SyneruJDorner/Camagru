@@ -58,6 +58,14 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 ## Project Expectations
 https://github.com/justindd1994/Camagru/blob/master/camagru.markingsheet.pdf
 
+## Ensure
+1.	PHP
+2.	No exernal Frameworks
+3.	Config/database.php
+4.	Config/setup.php
+5.	PDO’s
+
+
 ## Steps
 1.	Navigate to localhost/Camagru/
 2.	Successfully register an account. make sure to use a valid email address as password
