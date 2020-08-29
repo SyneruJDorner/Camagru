@@ -45,11 +45,11 @@ A web site that is similar to Pintrest or Instagram, it allows users to upload i
 - Back end technologies
     - PHP
     - SQL
-    - JavaScript
 
 - Front-end technologies
     - HTML
     - CSS
+    - JavaScript
 
 - Database management systems
     - MySQL
