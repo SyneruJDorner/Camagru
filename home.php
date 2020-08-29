@@ -403,32 +403,6 @@ span.psw {
 
 
 
-
-
-
-
-	<!-- <?php
-	if ($_SESSION['username'] != null || isset($SESSION['username']))
-	{
-			echo '<div id="side_bar">';
-				echo '<form method="post" enctype="multipart/form-data">';
-					echo '<div class="center">';
-						echo "<div>";
-							echo '<img id="uploadPreview" style="width: 150px; height: 150px; margin: auto -75;"/>';
-							echo '<img id="ImageOverlayPreview" style="width: 150px; height: 150px; margin: auto -75;"/>';
-						echo "</div>";
-
-						echo '<input id="uploadImage" type="file" name="image" onchange="PreviewImage();" style="display: none;" />';
-						echo '<input id="ImageOverlay" type="file" name="overlayImage" onchange="PreviewImage(\'Overlay\');" style="display: none;" />';
-						echo '<input type="button" value="Upload Image..." style="float:left; margin-left:25px; width:100px;" onclick="document.getElementById(\'uploadImage\').click();" />';
-						echo '<input type="button" value="Add Overlay" style="float:left; margin-left:25px; width:100px;" onclick="document.getElementById(\'ImageOverlay\').click();" />';
-						echo '<input type="submit" name="submit" style="float:left; margin-left:25px;width:100px;" value="Upload"/>';
-					echo '</div>';
-				echo '</form>';
-			echo '</div>';
-		}
-	?> -->
-
 	<script type="text/javascript">
 	    function PreviewImage($args = null)
 	    {

@@ -97,7 +97,7 @@
 	$row = $stmt->fetch();
     
     echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\">";
-    echo "<body style=\"background-image: url('Art/Login Background.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;\">";
+    echo "<body style=\"background-image: url('Art/Login Background.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%; color: white;\">";
         echo "<div align='right'>";
             echo "<span>";
                 echo "<a class='float-right' href='home.php?page=0'>HOME</a>";
@@ -109,10 +109,15 @@
         echo '<form action="" method="POST">';
             $db_image = $row[4];
             $db_image_overlay = $row[5];
+            
+            if ($db_image_overlay == null)
+                $db_image_overlay = "Art/Transparent.png";
+            else
+                $db_image_overlay = "data:image;base64,".$db_image_overlay;
 
             echo '<h1 style="color: white;">' . $title . ' by ' . $uploader_name . '</h1>';
             echo "<div style='position: relative;'>";
-                echo '<img src="data:image;base64,'.$db_image_overlay.' " style="position: absolute;top: 50%;left: 50%;width: 500px;height: 500px;margin-top: -250px;margin-left: -250px;">' . "\n";
+                echo '<img src="'.$db_image_overlay.' " style="position: absolute;top: 50%;left: 50%;width: 500px;height: 500px;margin-top: -250px;margin-left: -250px;">' . "\n";
                 echo '<img src="data:image;base64,'.$db_image.' " style="height:512px;display: block;margin-left: auto;margin-right: auto;width: 500px;"> ' . "\n";
             echo "</div>";
 
